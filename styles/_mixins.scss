@@ -1,0 +1,10 @@
+@mixin flexLeft($direction) {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: $direction;
+}
+
+@function weight ($key) {
+    @return map-get($font-weight, $key)
+}

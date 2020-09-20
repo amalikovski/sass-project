@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo SASS</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Aprendendo a utilizar o SASS </h1>
+
+    <div class="container">
+        <p>Arquivo com extensão .scss é compilado para .css para o navegador conseguir interpretar</p>
+        <h1>Conceitos</h1>
+        <section class="primeiro">
+            <h3>Estilização de tags</h3>
+            <p>A estilização de tags pode ser feita tag dentro de tag.</p>
+            <p>Ex:</p>
+            <p class="margin01">body {</p>
+            <p class="margin02">h1 { </p>
+            <p class="margin03">font-weight: bold;</p>
+            <p class="margin02">}</p>
+            <p class="margin02">.container {</p>
+            <p class="margin03">font-weight: normal;</p>
+            <p class="margin02">}</p>
+            <p class="margin01">}</p>
+        </section>
+        <section>
+            <h3>Utilização de variáveis</h3>
+            <p>É possível utilizar variáveis para definição de valores padrões(cores, tamanhos, formatações),
+                facilitando a manutenção da estilização. </p>
+        </section>
+        <section>
+            <h3>Utilização de arquivos separados para organização de variáveis e estilizações </h3>
+            <p>Podem ser criados arquivos separados - _variables.scss - para atribuição das variáveis antes citadas.
+                Para utilizar oas variáveis fazer a importação @import "./variables";</p>
+        </section>
+        <section>
+            <h3>Arquivo _reset.scss</h3>
+            <p>Esse arquivo pode ser utilizado em qualquer projeto para zerar os atributos padrões das tags. Para ser
+                utilizado deve-se fazer a importação @import "./reset";</p>
+        </section>
+        <section>
+            <h3>Maps</h3>
+            <p>Esse recurso pode ser utilizado para mapear valores padrões de determinada propriedade </p>
+            <p class="margin01">$font-weight: (</p>
+            <p class="margin02">"regular": 500,</p>
+            <p class="margin02">"medium": 600,</p>
+            <p class="margin02">"bold": 700</p>
+            <p class="margin01">);</p>
+            <p>Para utilizar os valores definidos, na propriedade utilizar map-get($font-weight, regular)</p>
+        </section>
+        <section>
+            <h3>Funções</h3>
+            <p>É possivel também criar funções para automatizar e aplicar estilizações conforme exemplo abaixo</p>
+            <p class="margin01">@function weight ($key) {</p>
+            <p class="margin02">@return map-get($font-weight, $key)</p>
+            <p class="margin01">}</p>
+        </section>
+        <section>
+            <h3>Mixin</h3>
+            <p>Para evitar a repetição de códigos que serão utilizados em vários momentos, utiliza-se o @mixin. Cria-se
+                uma classe, que pode ou não receber parâmetros. Também pode ser criado em um arquivo separado para
+                melhor organização</p>
+            <p class="margin01">@mixin flexLeft($direction) {</p>
+            <p class="margin02">display: flex;</p>
+            <p class="margin02">justify-content: left;</p>
+            <p class="margin02">align-items: left;</p>
+            <p class="margin02">flex-direction: $direction;</p>
+            <p class="margin01">}</p>
+            <p>Para utilizar o recurso criado, realiza-se um import com a tag @include</p>
+            <p class="margin01">.container {</p>
+            <p class="margin02">@include flexLeft(column);</p>
+            <p class="margin01">}</p>
+        </section>
+        <section>
+            <h3>Lighten e Darken</h3>
+            <p>São funções para alterar as cores definidas. Lighten serve para clarear e Darken para escurecer.
+                Utiliza-se um percentual como valor a ser aplicado na função</p>
+            <p class="margin01">background: lighten($secondary-color, 15%);</p>
+            <p class="margin02"> color: darken($primary-color, 30%);</p>
+        </section>
+        <section>
+            <h3>Pseudoclasses</h3>
+            <p>Pode-se usar o & (E comercial) para aplicar estilização em Pseudoclasses, conforme exemplo abaixo:</p>
+            <p class="margin01">.btn {</p>
+            <p class="margin02">text-decoration: none;</p>
+            <p class="margin02">&:hover {</p>
+            <p class="margin03">background-color: darken($secondary-color, 70%);</p>
+            <p class="margin02">}</p>
+            <p class="margin01">}</p>
+        </section>
+        <section>
+            <h3>Estilização dentro de tag por classe</h3>
+            <p>Também é possivel estilizar uma classe a selecionando com o &.classe, por exemplo, dentro da ta section,
+                temos a classe "primeiro". Podemos selecionar ela utilizando dentro da tag section { &.primeiro }</p>
+            <p class="margin01">background: lighten($secondary-color, 15%);</p>
+            <p class="margin02"> color: darken($primary-color, 30%);</p>
+        </section>
+        <section>
+            <h3>Mobile - Media Queries</h3>
+            <p>As tags e estilizações para responsividade são utilizas da mesma forma que o css normal, mas podemos
+                utilizar variáveis para melhor organização</p>
+            <p class="margin01">@media (max-width: $mobile-max);</p>
+            <p>Pode se utilizar funções para definição dos breakpoints e estilizar corretamente o código para cada
+                dispositivo. Pode se utilizar o _breakpoints.scss(código do bootstrap) para o tratamento dos breakpoints
+            </p>
+            <p>Como a leitura do css é mobile first, define-se as classes para os dispositivos maiores, onde o padrão do
+                css é mobile</p>
+            <p class="margin01">@include media-breakpoint-up(sm) {</p>
+            <p class="margin02">padding: 20px</p>
+            <p class="margin01">}</p>
+            <p>Neste exemplo, se o dispositivo for acima do tamanho sm(small) conforme definido no _breakpoints.scss,
+                vai aplicar o padding de 20px;</p>
+
+        </section>
+
+        <div class="actions">
+            <a class="btn" href="https://www.youtube.com/watch?v=C8KlabGtE8Y&ab_channel=EmersonBroga">Veja o vídeo</a>
+            <a class="btn" href="https://sass-lang.com/">Saiba mais</a>
+        </div>
+
+    </div>
+    </section>
+</body>
+
+</html>

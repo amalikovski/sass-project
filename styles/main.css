@@ -1,0 +1,112 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+p {
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+body {
+  background: #ccffee;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin: 10px 20px;
+}
+
+body h1 {
+  color: #343434;
+  margin-bottom: 20px;
+}
+
+body h2 {
+  margin-bottom: 10px;
+}
+
+body section {
+  margin-bottom: 30px;
+}
+
+body section.primeiro {
+  background: #00b276;
+}
+
+body .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .margin01 {
+  padding-left: 5px;
+  margin: 0;
+}
+
+body .margin02 {
+  padding-left: 20px;
+  margin: 0;
+}
+
+body .margin03 {
+  padding-left: 30px;
+  margin: 0;
+}
+
+body .actions .btn {
+  text-decoration: none;
+  background-color: #007f54;
+  color: #fff;
+  margin: 15px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+}
+
+body .actions .btn:hover {
+  background-color: #001911;
+}
+/*# sourceMappingURL=main.css.map */
