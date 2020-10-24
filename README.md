@@ -1,7 +1,7 @@
 <h1 align="center">Guia SASS</h1>
 <p align="center">Projeto para testes e aprendizado de SASS - Frontend</p>
 <p align="center"> 🚧  Em constante construção 🚧 </p>
-<p align="center"><img src="https://img.shields.io/static/v1?label=Docker&message=Guia&logoColor=white&labelColor=066DA5&color=5a5e60&style=for-the-badge&logo=docker" />  <img src="https://img.shields.io/github/license/amalikovski/sass-project?style=for-the-badge" /></p>
+<p align="center"><img src="https://img.shields.io/static/v1?label=SASS&message=Guia&logoColor=white&labelColor=BF4080&color=5a5e60&style=for-the-badge&logo=sass" />  <img src="https://img.shields.io/github/license/amalikovski/sass-project?style=for-the-badge" /></p>
 
 <h2>Tabela de Conteúdos</h2>
 
